@@ -29,7 +29,11 @@ const styles = StyleSheet.create({
 
     throughText:{
         backgroundColor:'#ede7f6',
-        
+        margin:5,
+        padding:5,
+        borderRadius:10,
+        textAlign:'center',
+        fontWeight:'bold',
     },
 
     text:{
@@ -42,4 +46,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default TodoItem;
+export {TodoItem};

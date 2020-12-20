@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {SafeAreaView, View, Text,StyleSheet, FlatList} from 'react-native';
-import TodoPanel from './components/TodoPanel';
-import TodoItem from './components/TodoItem';
+import {TodoItem,TodoPanel} from './components';
 
 /**
  * TextInput: testID="input" (component which is user types the todo text)
@@ -22,27 +21,29 @@ function ToDo() {
         setCounter(counter +1);
   };
 
-  const onToggle = (id) => (e) => {
+  const onToggle = (id) => (a) => {
     settodoList (
       todolist.map((task) => task.id === id ? {...task, isDone: !task.isDone}: task)
     )
   };
 
-  const onCheckButtonClickHandler = (id) => (e) => {
+  const onCheckButtonClickHandler = (id) => (a) => {
     settodoList((todolist)=> {
       return(todolist.filter((task) => task.id !== id))
     });
     setCounter(counter - 1);
   };
 
-  const renderlist = ({item}) => ( <TodoItem task ={item} deleteTask={onCheckButtonClickHandler} onToggle={onToggle}/>)
+  const renderlist = ({item}) => 
+  ( <TodoItem task ={item} deleteTask={onCheckButtonClickHandler} 
+    onToggle={onToggle}/>)
     
-   return (
 
+   return (
     <SafeAreaView style={styles.container}>
       <View >
         <Text style={styles.title} >TODO</Text>
-        <Text style={styles.counter}>{counter}</Text>
+        <Text style={styles.counter}> Task: {counter}</Text>
       </View>
 
       <View style={styles.textContainer}>
@@ -74,7 +75,8 @@ const styles = StyleSheet.create({
   },
 
   counter:{
-    fontSize:40,
+    fontSize:30,
+    backgroundColor:'#eeeeee',
     marginLeft:10,
     padding: 10,
     margin: 5,

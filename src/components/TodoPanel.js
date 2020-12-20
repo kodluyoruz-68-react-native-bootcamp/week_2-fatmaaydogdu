@@ -25,7 +25,7 @@ function TodoPanel({addTodo,counter}){
     const styles = StyleSheet.create({
         inputContainer:{
             justifyContent:'flex-end',
-            backgroundColor:'#ede7f6',
+            backgroundColor:'#eeeeee',
             borderRadius:10,
         },
 
@@ -36,9 +36,10 @@ function TodoPanel({addTodo,counter}){
             textAlign:'center',
             fontWeight:'bold',
             borderRadius:10,
+            justifyContent:'flex-end',
         }
 
     })
 
 
-export default TodoPanel;
+export {TodoPanel};
