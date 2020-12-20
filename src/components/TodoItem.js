@@ -1,10 +1,10 @@
 import React from 'react';
-import {SafeAreaView,View,TouchableOpacity,Text, StyleSheet,textDecorationLine} from 'react-native';
+import {View,TouchableOpacity,Text, StyleSheet} from 'react-native';
 
 function TodoItem({onToggle,task,deleteTask })  {
     return(
         <TouchableOpacity testID = "button"
-        style={styles[task.isDone ? 'inOpacity' : 'opacity']}
+        style={styles[task.isDone ? 'inclick' : 'click']}
         onPress={onToggle(task.id)}
         onLongPress={deleteTask(task.id)}>
 
@@ -14,14 +14,14 @@ function TodoItem({onToggle,task,deleteTask })  {
 }
 
 const styles = StyleSheet.create({
-    inOpacity:{
+    inclink:{
         backgroundColor:'#e8eaf6',
         margin:5,
         padding:10,
         borderRadius:10,
     },
 
-    opacity:{
+    clink:{
         margin:5,
         padding:10,
         borderRadius:10

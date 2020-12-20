@@ -8,6 +8,7 @@ import {TodoItem,TodoPanel} from './components';
  * FlatList: testID="list" (list of todo)
  */
 
+
 function ToDo() {
 
   const [todolist, settodoList] = useState([]);
@@ -47,11 +48,12 @@ function ToDo() {
       </View>
 
       <View style={styles.textContainer}>
-      <FlatList 
+      <FlatList
       testID="list" 
       data={todolist}
       keyExtractor={(item, index) => item.id.toString()}
       renderItem={renderlist}
+      
       />
 
       <TodoPanel counter={counter} addTodo={addTodo}/>

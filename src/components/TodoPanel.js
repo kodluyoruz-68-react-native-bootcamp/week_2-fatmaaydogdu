@@ -36,7 +36,7 @@ function TodoPanel({addTodo,counter}){
             textAlign:'center',
             fontWeight:'bold',
             borderRadius:10,
-            justifyContent:'flex-end',
+            
         }
 
     })
